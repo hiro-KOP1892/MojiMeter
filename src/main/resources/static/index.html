@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>もじメーター - 9割到達バー</title>
+    <link rel="stylesheet" href="/css/style.css?v=7">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <div class="header">
+            <h1>📝 もじメーター</h1>
+            <p>レポートや応募書類の9割到達をサポート</p>
+        </div>
+
+        <!-- 設定エリア -->
+        <div class="settings-section">
+            <div class="form-group">
+                <label for="targetCount">上限文字数</label>
+                <input 
+                    type="number" 
+                    id="targetCount" 
+                    value="400" 
+                    min="100" 
+                    max="10000" 
+                    step="50"
+                >
+            </div>
+            <div class="form-group">
+                <label for="countMode">文字数カウント方式</label>
+                <select id="countMode">
+                    <option value="all">改行・空白をカウント</option>
+                    <option value="no-newlines">改行をカウントしない</option>
+                    <option value="no-whitespace">改行・空白をカウントしない</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ninetyPercent">9割ラインの文字数</label>
+                <input 
+                    type="number" 
+                    id="ninetyPercent" 
+                    value="360" 
+                    disabled
+                >
+            </div>
+        </div>
+
+        <!-- テキストエリア -->
+        <div class="textarea-section">
+            <label for="esText">ES本文を入力してください</label>
+            <textarea 
+                id="esText" 
+                placeholder="あなたの自己PRやES本文をここに入力してください..."
+            ></textarea>
+            <div class="editor-actions">
+                <button class="btn btn-secondary" id="saveBtn" type="button">一時保存</button>
+                <button class="btn btn-secondary" id="copyTextBtn" type="button">本文をコピー</button>
+            </div>
+            <div class="draft-history">
+                <label for="draftSelect">保存履歴</label>
+                <div class="draft-history-actions">
+                    <select id="draftSelect">
+                        <option value="">保存した文章を選択</option>
+                    </select>
+                    <button class="btn btn-secondary" id="loadDraftBtn" type="button" disabled>呼び出す</button>
+                </div>
+                <div class="draft-count" id="draftCount">保存件数: 0件</div>
+            </div>
+        </div>
+
+        <!-- 文字数統計 -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-label">現在の文字数</div>
+                <div class="stat-value" id="currentCount">0</div>
+                <div class="stat-subtext">
+                    <span id="currentPercent">0</span>%達成
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">目標まであと</div>
+                <div class="stat-value" id="remainingCount">
+                    <span id="remainingValue">360</span>字
+                </div>
+            </div>
+        </div>
+
+        <!-- プログレスバー -->
+        <div class="progress-section">
+            <label class="progress-label">9割到達プログレス</label>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar-fill yellow" style="width: 0%;">
+                </div>
+                <span class="progress-value" id="progressValue">0%</span>
+                <div class="goal-marker" id="goalMarker">
+                    <div class="goal-marker-label">9割</div>
+                </div>
+            </div>
+            <div class="progress-status" id="progressStatus">9割ラインまであと360文字</div>
+        </div>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <script src="/js/app.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: es-helper-ai
+  web:
+    resources:
+      static-locations: classpath:/static/
+      cache:
+        period: 0
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Gemini API設定
+gemini:
+  api:
+    # 環境変数GEMINI_API_KEYから読み込み
+    key: ${GEMINI_API_KEY:dummy-key-for-development}
+    model: gemini-1.5-flash
+
+# ログレベル設定
+logging:
+  level:
+    root: INFO
+    com.jobhunt.eshelper: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
