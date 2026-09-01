@@ -39,27 +39,6 @@ body {
     font-size: 14px;
 }
 
-.site-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    margin: -18px 0 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #eaecf0;
-    font-size: 12px;
-}
-
-.site-nav a {
-    color: #475467;
-    text-decoration: none;
-}
-
-.site-nav a:hover {
-    color: #667eea;
-    text-decoration: underline;
-}
-
 /* 設定エリア */
 .settings-section {
     display: grid;
