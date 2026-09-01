@@ -341,6 +341,78 @@ body {
     border: 1px solid #c7d2fe;
 }
 
+.site-footer,
+.info-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eaecf0;
+    font-size: 12px;
+}
+
+.site-footer a,
+.info-footer a,
+.back-link,
+.contact-link {
+    color: #475467;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.info-footer a:hover,
+.back-link:hover,
+.contact-link:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.info-page {
+    max-width: 760px;
+    width: 100%;
+    min-height: calc(100vh - 40px);
+    margin: 0 auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    color: #344054;
+    line-height: 1.8;
+}
+
+.info-page h1 {
+    margin: 20px 0 24px;
+    color: #1d2939;
+    font-size: 28px;
+}
+
+.info-page h2 {
+    margin: 28px 0 8px;
+    color: #1d2939;
+    font-size: 18px;
+}
+
+.info-page p,
+.info-page ul {
+    margin-bottom: 12px;
+}
+
+.info-page ul {
+    padding-left: 24px;
+}
+
+.updated-date {
+    margin-top: 32px;
+    color: #667085;
+    font-size: 13px;
+}
+
+.contact-link {
+    font-weight: 600;
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
     .container {
@@ -366,5 +438,15 @@ body {
 
     #esText {
         min-height: 200px;
+    }
+
+    .info-page {
+        min-height: 100vh;
+        padding: 24px 20px;
+        border-radius: 0;
+    }
+
+    .info-page h1 {
+        font-size: 24px;
     }
 }
